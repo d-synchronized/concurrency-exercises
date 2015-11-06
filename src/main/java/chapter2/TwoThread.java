@@ -29,6 +29,11 @@ public class TwoThread extends Thread {
         final TwoThread twoThread = new TwoThread();
         twoThread.setName("New Thread");
         twoThread.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         for (int i = 0; i < 10; i++) {
             twoThread.printMessages();
         }
