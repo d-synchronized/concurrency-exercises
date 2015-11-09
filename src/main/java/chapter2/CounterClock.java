@@ -1,13 +1,18 @@
 package chapter2;
 
 public class CounterClock {
+    
+    boolean keepRunning;
 
     public void runClock() throws InterruptedException {
+        
+        keepRunning = true;
+        
         int second = 0;
         int hour = 0;
         int minute = 0;
 
-        while (true) {
+        while (keepRunning) {
             Thread.sleep(1000);
             second++;
             if (second > 59) {
